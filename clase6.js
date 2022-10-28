@@ -58,3 +58,69 @@ function renderizandoElementos() {
   // Desarrollar la consigna aquí
 }
 renderizandoElementos();
+
+
+//////////////////
+
+
+const sitio = document.querySelector('body');
+const btnTema = document.querySelector('.tema button')
+const menuItems =  document.querySelectorAll('nav li');
+const contenedorNoticias = document.querySelector('main');
+const articulos = document.querySelectorAll('article');
+const titulos = document.querySelectorAll('article h2');
+const button = document.querySelector('button');
+
+
+/// Eliminar menu contextual de las imagenes
+const img = document.querySelectorAll('img');
+
+img.forEach((imagen) =>{
+    imagen.addEventListener("contextmenu", function(e){
+        e.preventDefault();
+        alert('Pillin!!! no te quieras robar las fotos!!')
+    } )
+})
+
+
+button.addEventListener("click", function(){
+        let darkConfirm = confirm("¿Quieres cambiar el tema de sitio a dark?");
+      
+        if(darkConfirm){
+          
+         sitio.classList.add('dark');
+         button.innerText = "Cambiar a modo claro 🌞";
+        button.style.background = ('white');
+        button.style.color =  ('black');
+          
+        } else  {
+        button.innerText = "Cambiar a modo dark 🐱‍👤"; 
+        sitio.classList.remove('dark');
+        button.style.background = ('black');
+        button.style.color =  ('white');
+        // button.style.background = ('white');
+        // button.style.color =  ('red');
+        
+      }
+    }
+    );
+
+    img.addEventListener("contextmenu", function(e){
+        e.preventDefault();
+
+    } )
+    
+
+// function elegirTema() {
+//     let darkConfirm = confirm("¿Quieres cambiar el tema de sitio a dark?");
+  
+//     if(darkConfirm){
+      
+//      sitio.classList.add('dark');
+//      btnTema.innerText = "Cambiar a modo claro 🌞";
+      
+//     } else  
+//     sitio.classList.remove('dark');
+//     btnTema.innerText = "Cambiar a modo dark 🐱‍👤"; 
+//   }
+//   elegirTema();
